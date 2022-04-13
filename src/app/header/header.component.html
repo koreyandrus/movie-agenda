@@ -1,13 +1,55 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand mb-0 h1" routerLink="/">Movie Agenda</a>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Search</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Agenda</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<nav class="bg-white shadow-lg">
+		<div class="max-w-6xl mx-auto px-4">
+			<div class="flex justify-between">
+				<div class="flex space-x-7">
+					<!-- Website Logo -->
+					<div>
+						<a href="#" class="flex items-center py-2 px-2">
+							<img src="/assets/img/logo.png" alt="Logo" class="h-12 w-12 mr-2" />
+              <span class="font-semibold text-red-800 text-lg"
+								>Movie Agenda</span
+							>
+						</a>
+					</div>
+					<!-- Primary Navbar items -->
+					<div class="hidden md:flex items-center space-x-1">
+						<a
+							href=""
+							class="py-4 px-4 text-gray-500 font-semibold hover:text-red-700 transition duration-300"
+							>Search</a
+						>
+						<a
+							href=""
+							class="py-4 px-4 text-gray-500 font-semibold hover:text-red-700 transition duration-300"
+							>List</a
+						>
+						<a
+							href=""
+							class="py-4 px-4 text-gray-500 font-semibold hover:text-red-700 transition duration-300"
+							>What's hot</a
+						>
+					</div>
+				</div>
+        <div class="hidden md:flex items-center space-x-3 ">
+          <a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a>
+          <a href="" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button class="outline-none mobile-menu-button" appMenuToggle>
+          <svg class=" w-6 h-6 text-gray-500 hover:text-red-700 "
+            x-show="!showMenu"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        </div>
+			</div>
+		</div>
+	</nav>
