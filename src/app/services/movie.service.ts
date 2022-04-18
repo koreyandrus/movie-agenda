@@ -1,18 +1,34 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 
-import { environment } from "src/environments/environment";
+import { Constants } from '../config/constants';
+
+import { Movie } from "../movie";
+import { Observable, catchError } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  apiUrl: string = 'https://api.themoviedb.org/3/movie/550?api_key=31b8073c5e7605cb23df4674c1ae905d';
-  movie: Object;
+  endpoint: string = Constants.API_ENDPOINT;
+  searchParams;
+  movie: Movie;
+  movieResults: Movie[];
 
   constructor(private http: HttpClient) {}
 
-  getMovie() {
-    return this.http.get(this.apiUrl);
+  searchMovie(searchTerm): Observable<Movie[]> {
+    return this.http.get<Movie[]>(Constants.API_ENDPOINT + "&query=" + searchTerm);
+  }
+
+  getTrending(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(Constants.API_ENDPOINT_HOT);
+  }
+
+  saveMovie(movieData) {
+    this.http.post('https://movie-agenda-default-rtdb.firebaseio.com/movies.json', movieData)
+      .subscribe(responseData => {
+        console.log(responseData);
+      })
   }
 }

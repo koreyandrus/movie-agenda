@@ -1,1 +1,7 @@
-<h1 class="text-center text-5xl">What's hot!</h1>
+<div class="container search-results" *ngIf="movieResults">
+  <div class="row">
+    <div class="col-sm" *ngFor="let movie of movieResults">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
+</div>

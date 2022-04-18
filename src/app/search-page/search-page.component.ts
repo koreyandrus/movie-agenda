@@ -9,22 +9,21 @@ import { MovieService } from '../services/movie.service';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-  movie;
+  movieResults: Movie[];
+  searchTerm: string;
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.movieService.getMovie()
-      .subscribe((data => {
-        // this.movie.id = data['id'];
-        // this.movie.title = data['title'];
-        // this.movie.poster = data['poster_path'];
-        // this.movie.overview = data['overview'];
-        // this.movie.releaseDate = data['release_date'];
-        // this.movie.tagline = data['tagline'];
-
-        console.log(typeof data);
-
-      }))
   }
 
+  onSearchMovies(searchTerm) {
+    this.movieService.searchMovie(searchTerm)
+      .subscribe(resData => {
+        this.movieResults = resData['results'];
+       })
+  }
+
+  onSaveMovie() {
+
+  }
 }

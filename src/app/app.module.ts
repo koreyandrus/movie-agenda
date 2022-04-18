@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,9 +10,9 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { ListPageComponent } from './list-page/list-page.component';
 import { WhatsHotPageComponent } from './whats-hot-page/whats-hot-page.component';
 import { MovieService } from './services/movie.service';
-import { HttpClientModule } from '@angular/common/http';
 import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MovieDetailsComponent } from './movie/movie-details/movie-details.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
