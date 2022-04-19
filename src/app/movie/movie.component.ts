@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 
 import { Constants } from '../config/constants';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-movie',
@@ -91,7 +92,7 @@ export class MovieComponent implements OnInit {
     }
 ]
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
   }
@@ -102,5 +103,9 @@ export class MovieComponent implements OnInit {
 
   getGenre(id) {
     return this.genres.find(genre => genre.id === id).name;
+  }
+
+  onSaveMovie(movieData) {
+    this.movieService.saveMovie(movieData);
   }
 }
