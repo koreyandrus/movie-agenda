@@ -1,4 +1,4 @@
-<div class="movie_card" id="bright">
+<!-- <div class="movie_card" id="bright">
   <div class="info_section">
     <div class="movie_header">
       <img class="locandina" *ngIf="movie.poster_path" [src]="getImagePath(movie.poster_path)"/>
@@ -11,7 +11,7 @@
     </div>
     <div class="movie_desc">
       <p class="text">
-        {{ movie.overview.slice(0, 100) + '...' }}
+        {{ movie.overview.slice(0, 150) + '...' }}
       </p>
     </div>
     <div class="movie_social">
@@ -25,4 +25,14 @@
   </div>
   <div *ngIf="movie.backdrop_path" class="blur_back bg-shift" [style.background-image]="'url(' + getImagePath(movie.backdrop_path) + ')'"></div>
   <div *ngIf="!movie.backdrop_path" class="blur_back" ngClass="linear-bg"></div>
+</div> -->
+
+<div class="card m-3">
+  <img [src]="getImagePath(movie.poster_path)" class="card-img-top" alt="">
+  <div class="details-cover">
+    <div class="details-text">
+      <h5 class="card-title">{{ movie.title }}</h5>
+      <p class="card-text">{{ movie.overview }}</p>
+    </div>
+  </div>
 </div>
