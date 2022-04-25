@@ -1,4 +1,4 @@
-<!-- <div class="movie_card" id="bright">
+<div class="movie_card" id="bright">
   <div class="info_section">
     <div class="movie_header">
       <img class="locandina" *ngIf="movie.poster_path" [src]="getImagePath(movie.poster_path)"/>
@@ -25,9 +25,11 @@
   </div>
   <div *ngIf="movie.backdrop_path" class="blur_back bg-shift" [style.background-image]="'url(' + getImagePath(movie.backdrop_path) + ')'"></div>
   <div *ngIf="!movie.backdrop_path" class="blur_back" ngClass="linear-bg"></div>
-</div> -->
+</div>
 
-<div class="card single-card m-3">
+<!--SECOND ATTEMPT -->
+
+<!-- <div class="card single-card m-3">
   <div class="poster">
     <img [src]="getImagePath(movie.poster_path)" class="card-img-top" alt="">
   </div>
@@ -41,7 +43,9 @@
       <p class="card-text info">{{ movie.overview }}</p>
     </div>
   </div>
-</div>
+</div> -->
+
+<!-- THIRD ATTEMPT -->
 
 
 <!-- <div class="card">

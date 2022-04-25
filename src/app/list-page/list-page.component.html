@@ -1,6 +1,6 @@
 <div class="container search-results" *ngIf="movieResults">
   <div class="row">
-    <div class="col-sm" *ngFor="let movie of movieResults">
+    <div class="col-sm-6" *ngFor="let movie of movieResults">
       <app-movie [movie]="movie"></app-movie>
     </div>
   </div>
