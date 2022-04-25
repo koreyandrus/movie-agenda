@@ -21,7 +21,7 @@
 <div class="container search-results" *ngIf="movieResults">
   <div class="row">
     <div class="col-sm" *ngFor="let movie of movieResults">
-      <app-movie *ngIf="movie.poster_path" [movie]="movie"></app-movie>
+      <app-movie [movie]="movie"></app-movie>
     </div>
   </div>
 </div>

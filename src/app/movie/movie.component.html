@@ -3,7 +3,12 @@
     <div class="movie_header">
       <img class="locandina" *ngIf="movie.poster_path" [src]="getImagePath(movie.poster_path)"/>
       <img class="locandina" *ngIf="!movie.poster_path" width="80px" src="../../assets/img/logo.svg"/>
-      <h3 class="title" *ngIf="movie.title">{{ movie.title }}</h3>
+      <h3 class="title" *ngIf="movie.title.length < 70; else longTitle">{{ movie.title }}</h3>
+      <ng-template #longTitle>
+        <h3>
+          {{ movie.title.slice(0,70) + '...' }}
+        </h3>
+      </ng-template>
       <h6 class="pl-2" *ngIf="movie.release_date">{{movie.release_date.slice(0,4)}}</h6>
       <div class="genres">
         <p class="type" *ngFor="let id of movie.genre_ids"><span>{{ getGenre(id) }}</span></p>
