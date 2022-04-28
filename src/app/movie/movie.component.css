@@ -21,7 +21,7 @@
  .movie_card {
 	 position: relative;
 	 display: block;
-	 min-width: 450px;
+	 max-width: 650px;
 	 height: 250px;
 	 margin: 25px auto;
 	 overflow: hidden;
@@ -65,7 +65,7 @@
    font-size: 12px;
    font-weight: 400;
 }
- .movie_card .info_section .movie_header .locandina {
+ .movie_card .info_section .movie_header .poster {
 	 position: relative;
 	 float: left;
 	 margin-right: 20px;

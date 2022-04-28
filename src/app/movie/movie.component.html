@@ -1,8 +1,8 @@
 <div class="movie_card" id="bright">
   <div class="info_section">
     <div class="movie_header">
-      <img class="locandina" *ngIf="movie.poster_path" [src]="getImagePath(movie.poster_path)"/>
-      <img class="locandina" *ngIf="!movie.poster_path" width="80px" src="../../assets/img/logo.svg"/>
+      <img class="poster" *ngIf="movie.poster_path" [src]="getImagePath(movie.poster_path)"/>
+      <img class="poster" *ngIf="!movie.poster_path" width="80px" src="../../assets/img/logo.svg"/>
       <h3 class="title" *ngIf="movie.title.length < 70; else longTitle">{{ movie.title }}</h3>
       <ng-template #longTitle>
         <h3>
@@ -24,9 +24,9 @@
         <li><i class="material-icons">share</i></li>
         <li><i class="material-icons">local_movies</i></li>
         <li><i class="material-icons" (click)="onSaveMovie(movie)">add</i></li>
-        <li>Show Details</li>
       </ul>
     </div>
+    <button class="btn btn-secondary position-absolute bottom-0 end-0 m-2">View Details</button>
   </div>
   <div *ngIf="movie.backdrop_path" class="blur_back bg-shift" [style.background-image]="'url(' + getImagePath(movie.backdrop_path) + ')'"></div>
   <div *ngIf="!movie.backdrop_path" class="blur_back" ngClass="linear-bg"></div>

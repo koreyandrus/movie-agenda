@@ -1,7 +1,8 @@
-<div class="container search-results" *ngIf="movieResults">
-  <div class="row">
-    <div class="col-sm-6" *ngFor="let movie of movieResults">
-      <app-movie [movie]="movie"></app-movie>
+<!-- <app-list-sidebar></app-list-sidebar> -->
+  <div class="container search-results" *ngIf="movieResults">
+    <div class="row">
+      <div class="col-sm-12 col-xl-6" *ngFor="let movie of movieResults">
+        <app-movie [movie]="movie"></app-movie>
+      </div>
     </div>
   </div>
-</div>

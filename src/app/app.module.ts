@@ -14,6 +14,8 @@ import { MovieService } from './services/movie.service';
 import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 import { FormsModule } from '@angular/forms';
+import { CreateListComponent } from './list-page/create-list/create-list.component';
+import { ListSidebarComponent } from './list-page/list-sidebar/list-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FormsModule } from '@angular/forms';
     ListPageComponent,
     WhatsHotPageComponent,
     MovieComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    CreateListComponent,
+    ListSidebarComponent
   ],
   imports: [
     BrowserModule,
