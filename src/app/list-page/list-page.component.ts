@@ -6,15 +6,15 @@ import { MovieService } from '../services/movie.service';
 @Component({
   selector: 'app-list-page',
   templateUrl: './list-page.component.html',
-  styleUrls: ['./list-page.component.css']
+  styleUrls: ['./list-page.component.css'],
 })
 export class ListPageComponent implements OnInit {
   movieResults: Movie[];
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.movieService.getSavedMovies();
-    this.movieResults = this.movieService.movies;
+    // this.movieService.getSavedMovies();
+    // this.movieResults = this.movieService.movies;
   }
 }

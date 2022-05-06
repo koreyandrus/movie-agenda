@@ -1,0 +1,11 @@
+.nav-item a {
+  color: #D84727;
+  font-weight: bold;
+  padding: 0px;
+  margin: 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #D84727;
+  border-bottom: 3px solid #D84727;
+}

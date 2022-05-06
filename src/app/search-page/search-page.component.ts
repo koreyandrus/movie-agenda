@@ -5,24 +5,20 @@ import { MovieService } from '../services/movie.service';
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
-  styleUrls: ['./search-page.component.css']
+  styleUrls: ['./search-page.component.css'],
 })
 export class SearchPageComponent implements OnInit {
-  movieResults: Movie[];
+  movieResults;
   searchTerm: string;
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSearchMovies(searchTerm) {
-    this.movieService.searchMovie(searchTerm)
-      .subscribe(resData => {
-        this.movieResults = resData['results'];
-       })
-  }
+    this.movieService.searchMovies(searchTerm).subscribe((resData) => {
+      console.log(resData);
+    });
 
-  onSaveMovie() {
-
+    // this.movieResults = resData['results'];
   }
 }
